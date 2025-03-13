@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "98a7927c-c639-4619-966b-a2ca13a9c3b6",
+		"name": "API(Дикий Сбор)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37567933",
+		"_collection_link": "https://skypro-6871.postman.co/workspace/SkyPro~2dd0e15f-c475-43f2-85e2-9d8506d4102f/collection/37567933-98a7927c-c639-4619-966b-a2ca13a9c3b6?action=share&source=collection_link&creator=37567933"
+	},
+	"item": [
+		{
+			"name": "Добавление одного товара",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"1\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"idCookie\":\"706527\",\"idProd\":\"204\",\"type\":\"add\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{main_url}}/ajax/basketOrder.php",
+					"host": [
+						"{{main_url}}"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отправка формы с корзины",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "'{\"all\":{\"project_name\":\"Дикий+Сбор\",\"admin_email\":\"ooo_ecotaiga@mail.ru\",\"form_subject\":\"Выбраны+товары+на+сайте\",\"colprod\":\"1+шт\",\"Имя\":\"ilya\",\"Телефон\":\"+7 (043) 255-5878\n\"},\"inp\":\"<p>Товар:+Грузди+соленые+Цена:+1600руб+1шт+Сумма:+1600руб</p><p>Общая+сумма:+1600руб</p>\"}'",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{main_url}}/ajax/basketSend.php",
+					"host": [
+						"{{main_url}}"
+					],
+					"path": [
+						"ajax",
+						"basketSend.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение количества товаров",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"idCookie\":\"457164\",\"idProd\":\"178\",\"type\":\"plus\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{main_url}}/ajax/basketOrder.php",
+					"host": [
+						"{{main_url}}"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление товара",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"0\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"idCookie\":\"706527\",\"idProd\":\"204\",\"type\":\"delete\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{main_url}}/ajax/basketOrder.php",
+					"host": [
+						"{{main_url}}"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "main_url",
+			"value": "https://www.sibdar-spb.ru",
+			"type": "string"
+		}
+	]
+}
